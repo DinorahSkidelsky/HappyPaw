@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <h1><strong>Edit your Reservation:</strong></h1>
+  </div>
+
+  <%= simple_form_for [ @profile, @reservation ] do |f| %>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+        </div>
+        <div class="col">
+          <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+        </div>
+        <div class="col">
+          <%= f.input :observation %>
+        </div>
+        <div class="col">
+          <%= f.input :phone_number %>
+        </div>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col d-flex justify-content-end">
+        <%= f.submit "Go", class: "btn btn-warning" %>
+        <%= link_to 'Back', reservations_path, class: "btn btn-dark" %>
+      </div>
+    </div>
+  <% end %>
+</div>

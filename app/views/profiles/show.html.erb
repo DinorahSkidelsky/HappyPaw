@@ -1,0 +1,23 @@
+<% @profile.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<h3><%= @profile.description %></h3>
+<p><%= @profile.location %></p>
+<p>$<%= @profile.price %>/ Night</p>
+<p><%= @profile.phone_number %></p>
+
+<%= link_to 'Reserve Now', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
+<%= link_to "Edit", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
+<%= link_to "Delete",
+                  profile_path(@profile),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
+<strong>Reviews:</strong>
+
+<% @profile.reviews.each do |review|  %>
+<%= "⭐" * review.rating %>
+<%= review.content %>
+<% end %>
+
+
+<%= link_to 'Back', profiles_path, class: "btn btn-dark" %>

@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="d-flex justify-content-center"><strong>Write a Review:</strong></h1>
+    <%= simple_form_for [ @reservation, @review ] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <div class="d-flex justify-content-end">
+      <%= f.submit "Go", class: "btn btn-warning mb-3" %>
+      <%= link_to 'Back', reservations_path, class: "btn btn-dark mx-2 mb-3" %>
+      </div>
+    <% end %>
+</div>
