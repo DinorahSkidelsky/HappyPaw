@@ -7,10 +7,10 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :start_time, as: :datetime, html5: true, required: false, input_html: {class: "datepicker"} %>
         </div>
         <div class="col">
-          <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :end_time, as: :datetime, html5: true, required: false, input_html: {class: "datepicker"} %>
         </div>
         <div class="col">
           <%= f.input :observation %>
@@ -18,6 +18,9 @@
         <div class="col">
           <%= f.input :phone_number %>
         </div>
+      <div class="col">
+          <%= f.input :confirmation %>
+      </div>
       </div>
     </div>
     <div class="row my-5">

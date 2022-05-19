@@ -1,3 +1,17 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= form_tag profiles_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Location"
+  %>
+<br>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<!-- the list of movies -->
+<br>
+
 <div class="banner">
   <div class="container">
     <h1>Find the best host for your pet</h1>
