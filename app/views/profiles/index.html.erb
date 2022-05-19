@@ -1,0 +1,30 @@
+<div class="container">
+  <h1><strong>Profiles List:</strong></h1>
+    <div>
+      <ul>
+        <li><% @profiles.each do |profile| %>
+          <% profile.photos.each do |photo| %>
+            <%= link_to (cl_image_tag photo.key, crop: :fill), profile_path(profile) %>
+          <% end %></li>
+        <li><h4><%= profile.description %></h4></li>
+        <li><%= profile.location %></li>
+        <li>$<%= profile.price %> / Night</li>
+        <li><%= profile.phone_number %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div>
+      <div>
+          <%= link_to "Reservations", reservations_path, class: "btn btn-warning
+          " %>
+            <%= link_to "Add a new profile", new_profile_path, class: "btn btn-warning mx-3" %>
+          <%= link_to "Back to Home", root_path, class: "btn btn-dark" %>
+      </div>
+  </div>
+</div>

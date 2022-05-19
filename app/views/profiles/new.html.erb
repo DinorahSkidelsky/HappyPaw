@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= image_tag("https://media.iatiseguros.com/wp-content/uploads/2017/08/04004709/hacer-housesitting-1.jpg", width: 550) %>
+    </div>
+    <div class="col border">
+      <div class="d-flex justify-content-center my-4">
+        <h1><strong>Create your Profile:</strong></h1>
+      </div>
+      <div class="d-flex justify-content-center my-3">
+        <%= simple_form_for(@profile) do |f| %>
+          <%= f.input :description %>
+          <%= f.input :location %>
+          <%= f.input :price %>
+          <%= f.input :phone_number %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.submit "Create Profile", class: "btn btn-warning mx-5" %>
+          <%= link_to "Back to Home", root_path, class: "btn btn-dark mx-5"%>
+        <% end %>
+      </div>
+    </div>
+</div>
+</div>

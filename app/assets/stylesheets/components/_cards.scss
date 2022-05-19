@@ -1,0 +1,33 @@
+.card-product {
+  margin: 80px;
+  overflow: hidden;
+  height: 450px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 550px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 240px;
+  object-fit: cover;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.separar-card{
+  display: flex;
+  justify-content: space-between;
+}
