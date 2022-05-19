@@ -25,7 +25,7 @@
           <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
         <% end %></th>
       <td><%= reservation.profile.description %></td>
-      <td><%= "#{reservation.profile.user.first_name} #{reservation.profile.user.last_name}/" "#{reservation.user.first_name}" %></td>
+      <td><%= "#{reservation.profile.user.first_name}/" "#{reservation.user.first_name}" %></td>
       <td><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.profile.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
