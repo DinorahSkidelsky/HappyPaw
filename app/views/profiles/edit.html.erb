@@ -1,0 +1,16 @@
+<div class="container">
+      <%= simple_form_for(@profile) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :price %>
+        <%= f.input :phone_number %>
+        <% @profile.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 100, width: 250, crop: :fill %>
+        <% end %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit %>
+      <% end %>
+
+      <%= link_to "Back", profile_path(@profile), class: "btn btn-dark"%>
+
+</div>
