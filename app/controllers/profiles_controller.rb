@@ -2,7 +2,12 @@ class ProfilesController < ApplicationController
   before_action :find_profile, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @profiles = Profile.all
+    if params[:query].present?
+      sql_query = "location ILIKE :query"
+      @profiles = Profile.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @profiles = Profile.all
+    end
   end
 
   def show

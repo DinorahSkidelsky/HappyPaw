@@ -1,6 +1,19 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<!-- [...] -->
+<%= form_tag profiles_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Location"
+  %>
+<br>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<!-- the list of movies -->
+<br>
+
 
 <%= link_to 'See all profiles', profiles_path, class: "btn btn-dark" %>
 <%= link_to 'Become a Sitter', new_profile_path, class: "btn btn-warning mx-3" %>
