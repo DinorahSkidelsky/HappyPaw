@@ -9,7 +9,6 @@ User.destroy_all
 Profile.destroy_all
 Reservation.destroy_all
 Review.destroy_all
-Chatroom.destroy_all
 
 u1 = User.create!(
   first_name: "Tom",
@@ -140,21 +139,3 @@ rw3 = Review.new(
 )
 rw3.reservation = r3
 rw3.save
-
-c1 = Chatroom.new(
-  name: 'chat 1',
-  profile_id: 7
-)
-c1.save
-
-c2 = Chatroom.new(
-  name: 'chat 2',
-  profile_id: 8
-)
-c1.save
-
-c3 = Chatroom.new(
-  name: 'chat 3',
-  profile_id: 9
-)
-c1.save
