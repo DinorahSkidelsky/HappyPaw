@@ -12,6 +12,86 @@
 <!-- the list of movies -->
 <br>
 
+<div class="banner">
+  <div class="container">
+    <h1>Find the best host for your pet</h1>
+    <p>Change your life with us</p>
+    <div class="content-search">
+    <input type="text" class="button-input" placeholder="Ubicacion">
+    <%= link_to "Search","Search", class: 'btn btn-flat' %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="separar-card">
+         <div class="card-product">
+           <%= image_tag "fotocard1.jpg" %>
+            <div class="card-product-infos">
+             <p>First CARD</p>
+           </div>
+          </div>
+         <div class="card-product">
+           <%= image_tag "fotocard1.jpg" %>
+           <div class="card-product-infos">
+             <p>Second CARD</p>
+           </div>
+          </div>
+        </div>
+     </div>
+    <div class="carousel-item">
+      <div class="separar-card">
+        <div class="card-product">
+          <%= image_tag "fotocard1.jpg" %>
+          <div class="card-product-infos">
+            <p>Thirth CARD</p>
+          </div>
+        </div>
+        <div class="card-product">
+          <%= image_tag "fotocard1.jpg" %>
+          <div class="card-product-infos">
+            <p>Fourth CARD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="separar-card">
+        <div class="card-product">
+          <%= image_tag "fotocard1.jpg" %>
+          <div class="card-product-infos">
+            <p>Product description with relevant info only.</p>
+          </div>
+        </div>
+        <div class="card-product">
+          <%= image_tag "fotocard1.jpg" %>
+          <div class="card-product-infos">
+            <p>Product description with relevant info only.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <button class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="visually-hidden">Next</span>
+    </button>
+     </div>
+    </div>
+  </div>
+</div>
+
 <%= link_to 'See all profiles', profiles_path, class: "btn btn-dark" %>
 <%= link_to 'Become a Sitter', new_profile_path, class: "btn btn-warning mx-3" %>
 <%= link_to 'My Reservations', reservations_path, class: "btn btn-warning" %>
