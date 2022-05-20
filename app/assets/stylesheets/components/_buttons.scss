@@ -2,11 +2,12 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  border: 2px solid #7A448D;
+  background: transparent;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: #000000;
   color: white;
 }
 
@@ -17,8 +18,8 @@
     border-width: 3px;
     border-radius: 12px;
     border-style: solid;
-    border-color: #69ca98;
-    background-color: #c2c2c2;
+    border-color: #7A448D;
+    background-color: transparent;
 }
 
 .content-search {

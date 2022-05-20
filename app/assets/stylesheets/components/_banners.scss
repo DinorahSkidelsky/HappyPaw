@@ -1,4 +1,4 @@
-* {
+h1, h2, h3, h4, h5, h6, p, a {
   font-family: 'Orelega One', cursive !important;
 }
 
@@ -24,4 +24,11 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner2 {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+  background-image: url("Bannerprofile.jpg");
 }
