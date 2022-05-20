@@ -3,16 +3,23 @@
   overflow: hidden;
   height: 450px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
   display: flex;
   align-items: center;
   width: 550px;
+  border-radius: 10px;
 }
 
 .card-product img {
   height: 100%;
-  width: 240px;
+  width: 280px;
   object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .card-product p {
@@ -30,4 +37,44 @@
 .separar-card{
   display: flex;
   justify-content: space-between;
+}
+
+.posicion-flecha {
+  position:fixed !important;
+}
+
+
+.card-profile {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px 20px;
+  padding: 15px;
+}
+
+.card-profile img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-profile h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profile p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-profile .card-profile-infos {
+  padding: 16px;
 }
