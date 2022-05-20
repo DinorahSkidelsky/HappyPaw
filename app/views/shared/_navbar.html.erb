@@ -1,25 +1,39 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "happypaw.jpg", class: "circleavatar" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Become a Sitter', new_profile_path, class: "nav-link" %>
+          </li>
+          <li>
+            <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.email %></a>
+          </li>
           <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.email %></a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+            <%= image_tag "https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+               <%= link_to "Profile", "#", class: "dropdown-item" %>
+               <%= link_to 'My Reservations', reservations_path, class: "dropdown-item" %>
+               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+             </div>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+             </div>
           </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <ul class="nav-link">Register</ul>
           </li>
         <% end %>
       </ul>

@@ -1,5 +1,10 @@
 <div class="container chatroom">
-  <h1>Estás en el chat con:<%= @chatroom.profile_id %></h1>
+
+  <% if @chatroom.user.id == current_user.id %>
+    <h1>Estás en el chat con <%= "#{@chatroom.profile.user.first_name} #{@chatroom.profile.user.last_name}" %></h1>
+  <% else @chatroom.profile.user.id  == current_user.id %>
+     <h1>Estás en el chat con <%= "#{@chatroom.user.first_name} #{@chatroom.user.last_name}" %></h1>
+  <% end %>
 
   <div class="messages">
     <% @chatroom.messages.each do |message| %>
@@ -13,13 +18,24 @@
     <% end %>
   </div>
 
+  <div class="container chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+>
+
+  <div class="messages" data-chatroom-subscription-target="messages">
+  <% @chatroom.messages.each do |message| %>
+    <%= render "messages/message", message: message %>
+  <% end %>
+</div>
+
   <%= simple_form_for [@chatroom, @message],
     remote: true,
     html: {class: "d-flex"} do |f|
   %>
     <%= f.input :content,
       label: false,
-      placeholder: "Message ##{@chatroom.name}",
+      placeholder: "Send a message",
       wrapper_html: {class: "flex-grow-1"}
     %>
     <%= f.submit "Send", class: "btn btn-primary" %>

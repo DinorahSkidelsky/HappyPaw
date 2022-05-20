@@ -36,6 +36,12 @@ class ReservationsController < ApplicationController
     redirect_to reservations_path
   end
 
+  def confirmation
+    @reservation = Reservation.find(params[:id])
+    @reservation.confirmation = true
+    @reservation.save
+  end
+
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
@@ -45,6 +51,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:start_time, :end_time, :observation, :phone_number)
+    params.require(:reservation).permit(:start_time, :end_time, :observation, :confirmation, :phone_number)
   end
 end

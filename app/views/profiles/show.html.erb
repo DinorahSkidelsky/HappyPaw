@@ -1,23 +1,44 @@
-<% @profile.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<h3><%= @profile.description %></h3>
-<p><%= @profile.location %></p>
-<p>$<%= @profile.price %>/ Night</p>
-<p><%= @profile.phone_number %></p>
+ <div class="banner2">
+  </div>
 
-<%= link_to 'Reserve Now', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
-<%= link_to "Edit", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
-<%= link_to "Delete",
-                  profile_path(@profile),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
-<strong>Reviews:</strong>
+<div class="container">
+    <% @profile.photos.each do |photo| %>
 
-<% @profile.reviews.each do |review|  %>
-<%= "⭐" * review.rating %>
-<%= review.content %>
-<% end %>
+      <%= cl_image_tag photo.key, class: "profile-photo rounded-circle", crop: :fill %>
 
+    <% end %>
 
-<%= link_to 'Back', profiles_path, class: "btn btn-dark" %>
+    <h3 class="d-flex justify-content-center"><%= "#{@profile.user.first_name}" " #{@profile.user.last_name}" %></h3>
+    <p><%= @profile.description %></p>
+    <p><%= @profile.location %></p>
+    <p>$<%= @profile.price %>/ Night</p>
+    <p><%= @profile.phone_number %></p>
+
+    <% if @profile.user_id != current_user.id %>
+    <%= link_to 'Reserve Now', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
+    <% end %>
+    <% if current_user.id == @profile.user_id %>
+      <%= link_to "Edit", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
+      <%= link_to "Delete",
+                        profile_path(@profile),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
+    <% end %>
+    <strong>Reviews:</strong>
+
+    <% @profile.reviews.each do |review|  %>
+      <%= "⭐" * review.rating %>
+      <%= review.content %>
+    <% end %>
+
+    <% if current_user.id != @profile.user_id %>
+      <% if @chat %>
+        <%= link_to "Seguir chateando", chatroom_path(@chat)%>
+      <% else %>
+        <%= link_to "Chat", chatrooms_path(user: current_user, profile: @profile), method: :post %>
+      <% end %>
+    <% end %>
+
+    <%= link_to 'Back', profiles_path, class: "btn btn-dark" %>
+</div>
+
