@@ -10,7 +10,6 @@
   <%= link_to 'Reserve Now', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
 <% end %>
 
-
 <% if current_user.id == @profile.user_id %>
   <%= link_to "Edit", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
   <%= link_to "Delete",
