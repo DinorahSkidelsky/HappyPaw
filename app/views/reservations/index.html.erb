@@ -30,12 +30,11 @@
       <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.profile.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
 
-
       <% if current_user.id == reservation.profile.user.id %>
         <% if reservation.confirmation %>
-          <td>✔</td>
+          <td>✅</td>
         <% else %>
-          <td><a data-confirm="Are you sure?" title="Confirmation <%= reservation.id %>" rel="nofollow" data-method="PATCH" href="/reservations/<%= reservation.id %>/confirmation">Confirmation</a></td>
+          <td><a data-confirm="Are you sure to want to confirm?" title="Confirmation <%= reservation.id %>" rel="nofollow" data-method="PATCH" href="/reservations/<%= reservation.id %>/confirmation">Confirmation</a></td>
         <% end %>
       <% end %>
 
