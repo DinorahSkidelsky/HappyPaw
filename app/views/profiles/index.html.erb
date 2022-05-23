@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-6">
       <h1 class="d-flex justify-content-center"><strong>Profiles List:</strong></h1>
@@ -21,14 +21,13 @@
           </div>
           <% end %>
         </ul>
-
       </div>
 
       <div class="col-6">
        <div style="width: 100%; height: 80vh; position: sticky; top: 0; margin: 67px;"
          data-controller="mapbox"
          data-mapbox-markers-value="<%= @markers.to_json %>"
-         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
      </div>
     </div>
   </div>

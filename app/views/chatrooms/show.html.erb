@@ -1,9 +1,9 @@
 <div class="container chatroom">
 
   <% if @chatroom.user.id == current_user.id %>
-    <h1>Estás en el chat con <%= "#{@chatroom.profile.user.first_name} #{@chatroom.profile.user.last_name}" %></h1>
+    <h1>You are in the chat whit <%= "#{@chatroom.profile.user.first_name} #{@chatroom.profile.user.last_name}" %></h1>
   <% else @chatroom.profile.user.id  == current_user.id %>
-     <h1>Estás en el chat con <%= "#{@chatroom.user.first_name} #{@chatroom.user.last_name}" %></h1>
+     <h1>You are in the chat whit <%= "#{@chatroom.user.first_name} #{@chatroom.user.last_name}" %></h1>
   <% end %>
 
   <div class="messages">
@@ -17,17 +17,6 @@
       </div>
     <% end %>
   </div>
-
-  <div class="container chatroom"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-
-  <div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
-  <% end %>
-</div>
 
   <%= simple_form_for [@chatroom, @message],
     remote: true,
