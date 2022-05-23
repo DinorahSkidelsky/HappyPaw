@@ -24,6 +24,15 @@ class ProfilesController < ApplicationController
 
   def show
     @chat = current_user.chatrooms.find_by(profile: @profile)
+    @profiles = Profile.geocoded
+    @markers = @profiles.map do |profile|
+      {
+        lat: profile.latitude,
+        lng: profile.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { profile: profile }),
+        image_url: helpers.asset_url(cl_image_path(profile.photos.first.key))
+      }
+    end
   end
 
   def new

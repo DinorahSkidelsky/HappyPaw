@@ -1,17 +1,17 @@
 <div class="banner">
   <div class="container">
     <h1>Find the best host for your pet</h1>
-    <p>Change your life with us</p>
+    <p>Change your pet's life with us</p>
       <div class="content-search">
         <%= form_tag profiles_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "button-input", placeholder: "Location" %>
+        <%= text_field_tag :query, params[:query], class: " btn button-input", placeholder: "Location" %>
         <%= submit_tag "Search", class: "btn btn-flat" %>
         <%= link_to 'See all profiles', profiles_path, class: "btn btn-flat" %>
         <% end %>
       </div>
   </div>
 </div>
-<div class="container ">
+<div class="container d-flex justify-content-center">
 <h1>Algunos de nuestros sitters</h1>
 </div>
 <%# CAROUSEL %>
