@@ -2,7 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :profile
   has_one :review, dependent: :destroy
-  validates :start_time, :end_time, :observation, presence: true
+  validates :start_time, :end_time, :phone_number, presence: true
   validate :date_cannot_be_in_the_past
   validate :start_time_cannot_be_end_time
   before_update :start_time_cannot_be_end_time

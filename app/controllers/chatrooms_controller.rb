@@ -1,4 +1,8 @@
 class ChatroomsController < ApplicationController
+  def index
+    @chatrooms = Chatroom.all
+  end
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
@@ -7,9 +11,9 @@ class ChatroomsController < ApplicationController
   def create
     @chat = Chatroom.new
     @chat.user = current_user
-      @chat.profile = Profile.find(params[:profile])
-      @chat.name = "chats"
-      if @chat.save
+    @chat.profile = Profile.find(params[:profile])
+    @chat.name = "chats"
+    if @chat.save
       redirect_to chatroom_path(@chat)
     else
       render 'pages/home'

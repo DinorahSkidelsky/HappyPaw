@@ -6,17 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-
-    <script src="https://kit.fontawesome.com/48474defd0.js" crossorigin="anonymous"></script>
-
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/48474defd0.js" crossorigin="anonymous"></script>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
@@ -25,15 +20,8 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-
-    <%= yield %>
-
-    
-    <div class="container">
       <%= yield %>
-    </div>
-    
+
     <%= render 'shared/footer' %>
 
   </body>
