@@ -1,13 +1,17 @@
 .btn-flat {
+  text-align: center;
+  padding: 16px;
+  font-size: 18px;
+  border-width: 3px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #7A448D;
+  background-color: transparent;
   color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  border: 2px solid #7A448D;
-  background: transparent;
 }
 
 .btn-flat:hover {
-  background: #000000;
+  background: #7A448D;
   color: white;
 }
 
@@ -20,6 +24,7 @@
     border-style: solid;
     border-color: #7A448D;
     background-color: transparent;
+    color: white;
 }
 
 .content-search {
