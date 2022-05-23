@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for [ @profile, @reservation ] do |f| %>
-    <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :start_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
+    <%= f.input :end_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
     <%= f.input :observation %>
     <%= f.input :phone_number %>
     <%= f.button :submit, "Go", class: "btn btn-warning mx-3" %>

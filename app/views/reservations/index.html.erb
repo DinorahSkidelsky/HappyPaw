@@ -7,11 +7,12 @@
   <thead>
     <tr>
       <th scope="col">Photo</th>
-      <th scope="col">Description</th>
-      <th scope="col">Sitter</th>
+      <th scope="col">Observations</th>
+      <th scope="col">Sitter/Client</th>
       <th scope="col">Start Day</th>
       <th scope="col">End Day</th>
       <th scope="col">Price</th>
+      <th scope="col">Confirmations</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -19,35 +20,38 @@
   <tbody>
     <% @reservations.each do |reservation| %>
     <tr>
-      <% if reservation.user_id == current_user.id %>
+      <% if current_user.id == reservation.profile.user.id || reservation.user_id == current_user.id %>
       <th scope="row"><% reservation.profile.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
         <% end %></th>
-      <td><%= reservation.profile.description %></td>
-      <td><%= "#{reservation.profile.user.first_name} #{reservation.profile.user.last_name}" %></td>
+      <td><%= reservation.observation %></td>
+      <td><%= "#{reservation.profile.user.first_name} / " "#{reservation.user.first_name}" %></td>
       <td><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
       <td><%= reservation.profile.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
-      <td><%= link_to "Edit", edit_reservation_path(reservation) %></td>
-      <td><%= link_to "Delete",
-              reservation_path(reservation),
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn btn-dark mx-3" %></td>
-      <td><%= link_to "Review", new_reservation_review_path(reservation) %></td>
-    </tr>
-    <% end %>
-    <% @profiles.each do |profile| %>
-        <% if reservation.profile_id == profile.id %>
-          <th scope="row"><% reservation.profile.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-        <% end %></th>
-      <td><%= reservation.profile.description %></td>
-      <td><%= "#{reservation.profile.user.first_name} #{reservation.profile.user.last_name}" %></td>
-      <td><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
-      <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
-      <td><%= reservation.profile.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
+
+      <% if current_user.id == reservation.profile.user.id %>
+        <% if reservation.confirmation %>
+          <td>✅</td>
+        <% else %>
+          <td><a data-confirm="Are you sure to want to confirm?" title="Confirmation <%= reservation.id %>" rel="nofollow" data-method="PATCH" href="/reservations/<%= reservation.id %>/confirmation">Confirmation</a></td>
         <% end %>
+      <% end %>
+
+      <% if reservation.user_id == current_user.id %>
+        <% if reservation.confirmation %>
+          <td>✅</td>
+        <% else %>
+          <td>No Confirmation</td>
+        <% end %>
+        <td><%= link_to "Edit", edit_reservation_path(reservation) %></td>
+        <td><a data-confirm="You sure?" title="Delete <%= reservation.id %>" rel="nofollow" data-method="DELETE" href="/reservations/<%= reservation.id %>">Delete</a></td>
+        <td><%= link_to "Review", new_reservation_review_path(reservation) %></td>
+      <% end %>
+    </tr>
     <% end %>
     <% end %>
   </tbody>
   </table>
+</div>
+</div>
