@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>My Chats</h1>
+  <div>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <% if current_user.id == chatroom.profile.user.id || chatroom.user_id == current_user.id %>
+          <% if chatroom.user.id == current_user.id %>
+            <li><%= link_to "Chat whit:" " #{chatroom.profile.user.first_name} #{chatroom.profile.user.last_name}", chatroom_path(chatroom) %></li>
+          <% else chatroom.profile.user.id  == current_user.id %>
+            <li><%= link_to "Chat whit:" " #{chatroom.user.first_name} #{chatroom.user.last_name}", chatroom_path(chatroom) %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
