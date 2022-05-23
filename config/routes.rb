@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   delete "reservations/:id", to: "reservations#destroy", as: "reservation"
+  patch "reservations/:id/confirmation", to: "reservations#confirmation", as: "confirmation"
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
