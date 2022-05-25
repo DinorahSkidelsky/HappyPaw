@@ -1,36 +1,38 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "happypaw.jpg", class: "circleavatar" %>
+    <% if user_signed_in? %>
+       <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "happypaw.jpg", class: "circleavatar" %> HappyPaw
+      <% end %>
+    <% else %>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "happypaw.jpg", class: "circleavatar" %>
+      <% end %>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-
-          <% if current_user.profile == nil %>
-            <%= link_to 'Become a Sitter', new_profile_path, class: "nav-link" %>
-          <% end %>
-
-          </li>
-          <li>
-            <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.email %></a>
+            <% if current_user.profile == nil %>
+              <%= link_to 'Become a Sitter', new_profile_path, class: "nav-link btn btn-danger" %>
+            <% else %>
+              <%= link_to 'Chats', chatrooms_path, class: "btn btn-info" %>
+              <%= link_to 'Reservations', reservations_path, class: "btn btn-info" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key, style: "cursor: pointer; width: 32px; height: 32px;", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile != nil %>
-               <%= link_to "Profile", profile_path(current_user.profile), class: "dropdown-item" %>
+                <div class="dropdown-item"><%= "#{current_user.first_name}" %></div>
+                <%= link_to "Profile", profile_path(current_user.profile), class: "dropdown-item" %>
               <% end %>
-               <%= link_to 'Chats', chatrooms_path, class: "dropdown-item" %>
-               <%= link_to 'Reservations', reservations_path, class: "dropdown-item" %>
-               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-             </div>
+
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
              </div>

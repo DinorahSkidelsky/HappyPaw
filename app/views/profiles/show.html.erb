@@ -1,6 +1,3 @@
- <div class="banner2">
-  </div>
-
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -20,11 +17,11 @@
     <%= link_to 'Reserve Now', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
     <% end %>
     <% if current_user.id == @profile.user_id %>
-      <%= link_to "Edit My Profile", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
-      <%= link_to "Delete My Profile",
+      <%= link_to '<i class= "fa fa-edit text-primary"></i>'.html_safe, edit_profile_path(@profile) %>
+      <%= link_to '<i class= "fas fa-trash text-danger"></i>'.html_safe,
                         profile_path(@profile),
                         method: :delete,
-                        data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
+                        data: { confirm: "Are you sure?" } %>
     <% end %>
     <strong>Reviews:</strong>
 

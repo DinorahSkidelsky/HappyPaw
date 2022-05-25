@@ -19,4 +19,10 @@ class ChatroomsController < ApplicationController
       render 'pages/home'
     end
   end
+
+  def destroy
+    @chatroom = Chatroom.find(params[:id])
+    @chatroom.destroy
+    redirect_to chatrooms_path
+  end
 end

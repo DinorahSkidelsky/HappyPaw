@@ -1,16 +1,40 @@
 <div class="container">
-  <h1>My Chats</h1>
-  <div>
-    <ul>
-      <% @chatrooms.each do |chatroom| %>
-        <% if current_user.id == chatroom.profile.user.id || chatroom.user_id == current_user.id %>
-          <% if chatroom.user.id == current_user.id %>
-            <li><%= link_to "Chat whit:" " #{chatroom.profile.user.first_name} #{chatroom.profile.user.last_name}", chatroom_path(chatroom) %></li>
-          <% else chatroom.profile.user.id  == current_user.id %>
-            <li><%= link_to "Chat whit:" " #{chatroom.user.first_name} #{chatroom.user.last_name}", chatroom_path(chatroom) %></li>
-          <% end %>
+  <div class="d-flex justify-content-center my-5">
+    <h1>Chats</h1>
+  </div>
+  <div class="cards flex-container">
+    <% @chatrooms.each do |chatroom| %>
+      <% if current_user.id == chatroom.profile.user.id || chatroom.user_id == current_user.id %>
+        <% if chatroom.user.id == current_user.id %>
+          <div class="card-chat" style="background-image: url('<%= cl_image_path chatroom.profile.user.photo.key, style: "width: 50px; height: 50px;",class: "profile-photo mt-0", crop: :fill %>');">
+            <div class="card__content-chat">
+              <h3 class="card__title-chat">
+                <%= link_to "Chat " " #{chatroom.profile.user.first_name} #{chatroom.profile.user.last_name}", chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-success" %>
+              </h3>
+              <h3>
+                <%= link_to '<i class= "fas fa-trash text-success"></i>'.html_safe,
+                    chatroom_path(chatroom),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+              </h3>
+            </div>
+          </div>
+        <% else chatroom.profile.user.id  == current_user.id %>
+          <div class="card-chat" style="background-image: url('<%= cl_image_path chatroom.user.photo.key, style: "width: 50px; height: 50px;",class: "profile-photo mt-0", crop: :fill %>');">
+            <div class="card__content-chat">
+              <h3 class="card__title-chat">
+                <%= link_to "Chat " " #{chatroom.user.first_name} #{chatroom.user.last_name}", chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-success" %>
+              </h3>
+              <h3>
+                <%= link_to '<i class= "fas fa-trash text-success"></i>'.html_safe,
+                    chatroom_path(chatroom),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+              </h3>
+            </div>
+          </div>
         <% end %>
       <% end %>
-    </ul>
+    <% end %>
   </div>
 </div>
