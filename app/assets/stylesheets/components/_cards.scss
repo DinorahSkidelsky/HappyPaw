@@ -2,10 +2,10 @@
   margin: 80px;
   overflow: hidden;
   height: 450px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  background: grey;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
+  //align-items: center;
   width: 550px;
   border-radius: 10px;
 }
@@ -25,7 +25,7 @@
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -34,29 +34,31 @@
   padding: 16px;
 }
 
-.separar-card{
+.separar-card {
   display: flex;
   justify-content: space-between;
 }
 
 .posicion-flecha {
-  position:fixed !important;
+  position: fixed !important;
 }
 
 .card-profile {
   overflow: hidden;
   height: 200px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   margin: 30px;
   border-radius: 12px;
+  list-style: none;
+  position: relative;
 }
 
 .card-profile img {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 250px;
   object-fit: cover;
 }
 
@@ -64,16 +66,30 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding: 15px;
 }
 
 .card-profile p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
 }
 
-.card-profile .card-profile-infos {
-  padding: 16px;
+.card-profile .card-profile-info {
+  display: flex;
+}
+.card-profile-info .share {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: blue;
+}
+
+.card-profile-info .like {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  color: red;
 }
