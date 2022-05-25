@@ -1,32 +1,49 @@
 .btn-flat {
   text-align: center;
-  padding: 16px;
-  font-size: 18px;
+  padding: 6px;
+  font-size: 22px;
   border-width: 3px;
   border-radius: 12px;
   border-style: solid;
-  border-color: #7A448D;
+  border-color: #B7E3EC;
   background-color: transparent;
-  color: white;
+  color: rgb(0, 0, 0);
+  font-family: 'Orelega One', cursive;
+}
+
+#query::placeholder {
+  font-family: 'Orelega One', cursive;
+  color: black;
 }
 
 .btn-flat:hover {
-  background: #7A448D;
+  background: #B7E3EC;
   color: white;
 }
 
-.button-input{
+.button-input {
     text-align: center;
-    padding: 16px;
-    font-size: 18px;
+    padding: 6px;
+    font-size: 22px;
     border-width: 3px;
     border-radius: 12px;
     border-style: solid;
-    border-color: #7A448D;
+    border-color: #B7E3EC;
     background-color: transparent;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
+.button-input:focus {
+  background-color: #B7E3EC;
+  border-color: #B7E3EC;
+  box-shadow: none;
+}
+
+
+
 .content-search {
-  text-align: center;
+  text-align: start;
+}
+.profiles{
+  padding-top: 20px;
 }
