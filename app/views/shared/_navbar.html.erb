@@ -17,10 +17,10 @@
         <% if user_signed_in? %>
           <li class="nav-item">
             <% if current_user.profile == nil %>
-              <%= link_to 'Become a Sitter', new_profile_path, class: "nav-link btn btn-danger" %>
+              <%= link_to 'Become a Sitter', new_profile_path, class: "nav-link btn btn-flat me-3" %>
             <% else %>
-              <%= link_to 'Chats', chatrooms_path, class: "btn btn-info" %>
-              <%= link_to 'Reservations', reservations_path, class: "btn btn-info" %>
+              <%= link_to 'Chats', chatrooms_path, class: "btn btn-flat me-3" %>
+              <%= link_to 'Reservations', reservations_path, class: "btn btn-flat me-3" %>
             <% end %>
           </li>
           <li class="nav-item dropdown">
