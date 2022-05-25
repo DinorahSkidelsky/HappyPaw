@@ -1,51 +1,70 @@
- <div class="banner2">
-  </div>
-
 <div class="container">
-  <div class="row">
-    <div class="col-6">
-    <%= cl_image_tag @profile.user.photo.key, class: "profile-photo rounded-circle", crop: :fill %>
-    <h3 class="d-flex justify-content-start"><%= "#{@profile.user.first_name}" " #{@profile.user.last_name}" %></h3>
-    <% @profile.photos.each do |photo| %>
-      <%= cl_image_tag photo.key %>
-    <% end %>
-    <p><%= @profile.description %></p>
-    <p><%= @profile.location %></p>
-    <p>$<%= @profile.price %>/ Night</p>
-    <p><%= @profile.phone_number %></p>
+
+    <%# Columna 1  %>
+      <div class="row">
+        <div class="img-fluid col col-md-12 col-lg-6 text-center">
+          <%= cl_image_tag @profile.user.photo.key, class:"rounded-circle shadow me-5 mt-5", style:"height:370px; width:370px;", crop: :fill %>
+        </div>
+        <div class="col col-md-12 col-lg-6 mt-5">
+          <h1 class=""><%= "#{@profile.user.first_name.capitalize}" " #{@profile.user.last_name.capitalize}" %></h1>
+          <div class="mt-5">
+            <h5><%= @profile.description %></h5>
+          </div>
+            <% if @profile.user_id != current_user.id %>
+            <div class="mb-4 d-flex justify-content-evenly mt-5">
+              <%= link_to 'New Reservation', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
+              <% end %>
+              <% if current_user.id != @profile.user_id %>
+              <% if @chat %>
+              <%= link_to "Continue Chatting", chatroom_path(@chat), class:"btn btn-success" %>
+              <% else %>
+              <%= link_to "Start Chat", chatrooms_path(user: current_user, profile: @profile), class: "btn btn-success", method: :post %>
+              <% end %>
+            <% end %>
+            <% if current_user.id == @profile.user_id %>
+          <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
+          <%= link_to "Delete Profile",
+            profile_path(@profile),
+            method: :delete,
+            data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
+        <% end %>
+          </div>
+          <% @profile.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, style: "width: 200px; height: 200px;", class: "mt-5 shadow" %>
+          <% end %>
+        </div>
+      </div>
+    <%# Fin columna 1 %>
+
+    <%# Columna 2  %>
+    <div class="row">
+      <div class="col col-md-6 mb-5">
+        <p class="fs-3">📍 <%= @profile.location %></p>
+        <p class="fs-3">💵<%= @profile.price %>/ Night</p>
+        <p class="fs-3">📲<%= @profile.phone_number %></p>
+      </div>
     </div>
-  </div>
+    <%# Fin columna 2 %>
 
-    <% if @profile.user_id != current_user.id %>
-    <%= link_to 'Reserve Now', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
-    <% end %>
-    <% if current_user.id == @profile.user_id %>
-      <%= link_to "Edit My Profile", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
-      <%= link_to "Delete My Profile",
-                        profile_path(@profile),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
-    <% end %>
-    <strong>Reviews:</strong>
-
-    <% @profile.reviews.each do |review|  %>
-      <%= "⭐" * review.rating %>
-      <%= review.content %>
-    <% end %>
-
-    <% if current_user.id != @profile.user_id %>
-      <% if @chat %>
-        <%= link_to "Continue Chatting", chatroom_path(@chat)%>
-      <% else %>
-        <%= link_to "Start Chat", chatrooms_path(user: current_user, profile: @profile), method: :post %>
-      <% end %>
-    <% end %>
-
-    <div style="width: 50%; height: 50vh; position: sticky; top: 0; margin: 67px;"
-         data-controller="mapbox"
-         data-mapbox-markers-value="<%= @markers.to_json %>"
-         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <%# Columna 3  %>
+    <div class="row">
+      <div class="col col-md-6 col-lg-6">
+        <div style="width: 500px; height: 600px; margin-bottom: 50px";
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+        <div class="col col-md-6">
+          <h2><strong>Reviews:</strong>
+          </h2>
+          <br>
+          <% @profile.reviews.each do |review|  %>
+          <p><%= "⭐" * review.rating %></p>
+          <p><%= review.content %></p>
+          <% end %>
+        </div>
     </div>
-
-    <%= link_to 'Back', profiles_path, class: "btn btn-dark" %>
+<%# Fin columna3 %>
 </div>
+<%#Fin container %>
