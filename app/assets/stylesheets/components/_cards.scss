@@ -219,3 +219,71 @@
   opacity: 1;
   transition-delay: .25s;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-chat {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  color: #A18A96;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  padding: 10px;
+  background-size: cover;
+  border-radius: 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card-chat::before,
+.card-chat::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(60% + 35px);
+  background-color: #fff;
+  transition: transform .5s.25s ease-in;
+  z-index: -1;
+}
+.card-chat::before {
+  top: 0;
+  clip-path:
+      polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+  transform: translateY(-100%);
+}
+.card-chat::after {
+  bottom: 0;
+  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+  transform: translateY(100%);
+}
+.card__content-chat {
+  opacity: 0;
+  transition: opacity .25s;
+}
+.card__title-chat {
+  color: #6A515E;
+  margin-bottom: 15PX;
+}
+.card__description-chat {
+  font-size: 14px;
+}
+.card-chat:hover::before,
+.card-chat:hover::after {
+  transform: translateY(0);
+}
+.card-chat:hover .card__content-chat {
+  opacity: 1;
+  transition-delay: .75s;
+}

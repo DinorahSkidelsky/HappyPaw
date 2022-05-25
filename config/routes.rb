@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :reservations, only: [ :index, :edit, :update ] do
     resources :reviews, only: [:new, :create]
   end
-  resources :chatrooms, only: [ :create, :index, :show ] do
+  resources :chatrooms, only: [ :create, :index, :show, :destroy ] do
     resources :messages, only: :create
   end
 end
