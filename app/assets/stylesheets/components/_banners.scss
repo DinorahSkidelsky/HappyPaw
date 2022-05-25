@@ -5,23 +5,23 @@ h1, h2, h3, h4, h5, h6, p, a {
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  background-image: url("Bulldogbanner.jpg");
+  padding: 430px 0;
+  background-image: url("homepagefija.png");
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: rgb(0, 0, 0);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  font-size: 32px;
+  font-size: 90px;
   font-weight: bold;
-  text-align: center;
+  text-align: start;
 }
 
 .banner p {
-  text-align: center;
-  font-size: 20px;
-  color: white;
+  text-align: start;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -31,4 +31,49 @@ h1, h2, h3, h4, h5, h6, p, a {
   background-position: center;
   padding: 250px 0;
   background-image: url("Bannerprofile.jpg");
+}
+
+.img-conect{
+  margin-top: 20px;
+  background-size: cover;
+  height: 560px;
+  width: auto;
+  background-image: url("connecting.jpeg");
+}
+
+body {
+  background-color: white;
+}
+
+.letras-img {
+  font-size: 22px;
+  width: 80%;
+}
+
+.fondobanner2 {
+  background-size: cover;
+  background-position: center;
+  padding: 140px 0;
+  background-image: url("fondobanner2.png");
+  margin-bottom: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.fondobanner2 h1 {
+  margin: 0;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.fondobanner2 p {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

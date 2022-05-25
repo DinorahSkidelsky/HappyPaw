@@ -78,3 +78,129 @@
 .card-profile .card-profile-infos {
   padding: 16px;
 }
+
+// // // // // // // // // // //
+
+// .card {
+//   position: relative;
+//   width: 350px;
+//   height: 350px;
+//   color: #a18a96;
+//   text-align: center;
+//   display: grid;
+//   place-content: center;
+//   padding: 10px;
+//   background: url('./logo1.png') center no-repeat;
+//   background-size: cover;
+//   border-radius: 20px;
+//   z-index: 1;
+//   overflow: hidden;
+// }
+
+// .card::before,
+// .card::after {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   width: 100%;
+//   height: calc(60% + 35px);
+//   background-color: #fff;
+//   transition: transform .5s.25s ease-in;
+//   z-index: -1;
+// }
+
+// .card::before {
+//   top: 0;
+//   clip-path:
+//       polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+//   transform: translateY(-100%);
+// }
+
+// .card::after {
+//   bottom: 0;
+//   clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+//   transform: translateY(100%);
+// }
+
+// .card__content {
+//   opacity: 0;
+//   transition: opacity .25s;
+// }
+
+// .card__title {
+//   color: #6A515E;
+//   margin-bottom: 15PX;
+// }
+
+// .card__description {
+//   font-size: 14px;
+// }
+
+// .card:hover::before,
+// .card:hover::after {
+//   transform: translateY(0);
+// }
+
+// .card:hover .card__content {
+//   opacity: 1;
+//   transition-delay: .75s;
+// }
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  color: #a18a96;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  transform: translateY(70px);
+  transition: transform .25s;
+}
+
+.card__content::before {
+  content: '';
+  position: absolute;
+  top: -47px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-175deg);
+  border-radius: 50%;
+  box-shadow: inset 48px 48px #fff;
+}
+
+.card__title {
+  color: #6A515E;
+  line-height: 15px;
+}
+.card_subtitle {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.card__description {
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .5;
+}
+.card:hover .card__content {
+  transform: translateY(0);
+}
+
+.card:hover .card__description {
+  opacity: 1;
+  transition-delay: .25s;
+}
