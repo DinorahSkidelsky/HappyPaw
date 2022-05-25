@@ -1,16 +1,27 @@
 <div class="container">
-      <%= simple_form_for(@profile) do |f| %>
-        <%= f.input :description %>
-        <%= f.input :location %>
-        <%= f.input :price %>
-        <%= f.input :phone_number %>
-        <% @profile.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 100, width: 250, crop: :fill %>
+  <div class="row my-4 py-5">
+    <div class="col my-4 py-5">
+      <%= image_tag("editprofile.jpg", width: 650) %>
+    </div>
+    <div class="col border">
+      <div class="d-flex justify-content-center my-4 pt-4">
+        <h1><strong>Edit Profile</strong></h1>
+      </div>
+      <div class="d-flex justify-content-center mt-3 pt-3">
+        <%= simple_form_for(@profile) do |f| %>
+          <%= f.input :description %>
+          <%= f.input :location %>
+          <%= f.input :price %>
+          <%= f.input :phone_number %>
+          <% @profile.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 100, width: 250, crop: :fill %>
+          <% end %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.button :button, {class: "btn btn-success mt-2"} do %>
+              <i class="fas fa-paw"></i><strong> Update </strong>
+            <% end %>
         <% end %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit %>
-      <% end %>
-
-      <%= link_to "Back", profile_path(@profile), class: "btn btn-dark"%>
-
+      </div>
+    </div>
+  </div>
 </div>

@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :chatrooms
   has_many :messages, dependent: :destroy
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :photo, presence: true
+  has_one_attached :photo
 end

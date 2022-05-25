@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1;
+  width: 60%;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -26,5 +26,27 @@
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  .input-messages {
+    margin-bottom: 0 !important;
+    textarea {
+      align-self: stretch;
+    }
+  }
+
+  .left-message {
+    background-color: rgb(178, 255, 229);
+  }
+
+  .right-message {
+    background-color: rgb(219, 237, 241);
+    text-align: end;
+  }
+
+  .left-message, .right-message {
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
   }
 }

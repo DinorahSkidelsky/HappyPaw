@@ -1,44 +1,67 @@
 <div class="container">
   <div class="d-flex justify-content-center my-5">
-    <h1><strong>My Reservations:</strong></h1>
+    <h1><strong>Reservations</strong></h1>
   </div>
 
   <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Photo</th>
-      <th scope="col">Description</th>
-      <th scope="col">Sitter/Client</th>
-      <th scope="col">Start Day</th>
-      <th scope="col">End Day</th>
-      <th scope="col">Price</th>
-      <th scope="col">Confirmation</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @reservations.each do |reservation| %>
-    <tr>
-      <% if current_user.id == reservation.profile.user.id || reservation.user_id == current_user.id %>
-      <th scope="row"><% reservation.profile.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-        <% end %></th>
-      <td><%= reservation.profile.description %></td>
-      <td><%= "#{reservation.profile.user.first_name}/" "#{reservation.user.first_name}" %></td>
-      <td><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
-      <td><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
-      <td><%= reservation.profile.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
-      <% if reservation.confirmation %>
-        <td><i class="fa-solid fa-circle-check"></i></td>
-      <% else %>
-        <td>No Confirmation</td>
+    <thead>
+      <tr class="table-dark">
+        <th scope="col" class="text-center">Sitter</th>
+        <th scope="col" class="text-center">Observation</th>
+        <th scope="col" class="text-center">Sitter/Client</th>
+        <th scope="col" class="text-center">Start Day</th>
+        <th scope="col" class="text-center">End Day</th>
+        <th scope="col" class="text-center">Price</th>
+        <th scope="col" class="text-center">Confirmation</th>
+        <th scope="col" class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each_with_index do |reservation, i| %>
+        <% if i % 2 == 0 %>
+          <tr class="table-light">
+        <% else %>
+          <tr class="table-default">
+        <% end %>
+          <% if current_user.id == reservation.profile.user.id || reservation.user_id == current_user.id %>
+            <th scope="row" class="text-center">
+              <div class="photo-res">
+                <%= cl_image_tag reservation.profile.user.photo.key, height: 100, width: 150, crop: :fill %>
+              </div>
+            </th>
+            <td class="text-center"><%= reservation.observation %></td>
+            <td class="text-center"><%= "#{reservation.profile.user.first_name} / " "#{reservation.user.first_name}" %></td>
+            <td class="text-center"><%= reservation.start_time.strftime('%d/%m/%Y') %></td>
+            <td class="text-center"><%= reservation.end_time.strftime('%d/%m/%Y') %></td>
+            <td class="text-center"><%= reservation.profile.price * ((reservation.end_time - reservation.start_time) / 86400).to_i %></td>
+
+            <% if current_user.id == reservation.profile.user.id %>
+              <td class="text-center">
+                <% if reservation.confirmation %>
+                  <i class="fas fa-check-circle"></i>
+                <% else %>
+                  <a data-confirm="Are you sure to want to confirm?" title="Confirmation <%= reservation.id %>" rel="nofollow" data-method="PATCH" href="/reservations/<%= reservation.id %>/confirmation" class="btn btn-success">Confirm</a>
+                <% end %>
+              </td>
+              <td></td>
+            <% else %>
+              <td class="text-center">
+                <% if reservation.confirmation %>
+                  <i class="fas fa-check-circle"></i>
+                <% else %>
+                  Pending
+                <% end %>
+              </td>
+              <td class="text-center">
+                <%= link_to '<i class= "fa fa-edit text-primary"></i>'.html_safe, edit_reservation_path(reservation) %>
+                <a data-confirm="You sure?" title="Delete <%= reservation.id %>" rel="nofollow" data-method="DELETE" href="/reservations/<%= reservation.id %>"><i class="fa fa-trash text-danger"></i></a>
+                <%= link_to '<i class= "fas fa-file-alt text-success"></i>'.html_safe, new_reservation_review_path(reservation) %>
+              </td>
+            <% end %>
+          <% end %>
+        </tr>
       <% end %>
-      <td><%= link_to "Edit", edit_reservation_path(reservation) %></td>
-      <td><a data-confirm="You sure?" title="Delete <%= reservation.id %>" rel="nofollow" data-method="DELETE" href="/reservations/<%= reservation.id %>">Delete</a></td>
-      <td><%= link_to "Review", new_reservation_review_path(reservation) %></td>
-    </tr>
-    <% end %>
-    <% end %>
-  </tbody>
+    </tbody>
   </table>
+</div>
+</div>
