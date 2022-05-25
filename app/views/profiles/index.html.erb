@@ -1,33 +1,36 @@
 <div class="container">
     <div class="row">
+      <div class="col-6 ">
+      <h1 class="d-flex justify-content-center my-5"><strong>Profiles List:</strong></h1>
+        <div class="profiles">
+
+          <% @profiles.each do |profile| %>
+          <div class="card-profile">
+           <%= link_to (cl_image_tag profile.user.photo.key, crop: :fill), profile_path(profile) %>
+           <div class="card-profile-info">
+              <i class="fa fa-share-alt share"></i>
+              <i class="fa fa-heart like"></i>
+              <div>
+              <h4><%= profile.description %></h4>
+              <%=  %>
+              </div>
+            </div>
+
+          </div>
+          <% end %>
+        </div>
+      </div>
       <div class="col-6">
-      <h1 class="d-flex justify-content-center"><strong>Profiles List:</strong></h1>
-       <div class="content-search">
+      <div class="content-search my-5">
         <%= form_tag profiles_path, method: :get do %>
         <%= text_field_tag :query, params[:query], class: " btn button-input", placeholder: "Location" %>
         <%= submit_tag "Search", class: "btn btn-flat" %>
-        <%= link_to 'See all profiles', profiles_path, class: "btn btn-flat" %>
-        <% end %>
+                <% end %>
       </div>
-          <% @profiles.each do |profile| %>
-          <div class="card-profile">
-            <% profile.photos.each do |photo| %>
-              <%= link_to (cl_image_tag photo.key, crop: :fill), profile_path(profile) %>
-            <% end %>
-          <li><h4><%= profile.description %></h4></li>
-          <li><%= profile.location %></li>
-          <li>$<%= profile.price %> / Night</li>
-          <li><%= profile.phone_number %></li>
-          </div>
-          <% end %>
-        </ul>
-      </div>
-
-      <div class="col-6">
-       <div style="width: 100%; height: 80vh; position: sticky; top: 0; margin: 67px;"
+       <div style="width: 100%; height: 80vh; position: sticky; top: 30px;margin-top: 55px"
          data-controller="mapbox"
          data-mapbox-markers-value="<%= @markers.to_json %>"
-         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>
     </div>
   </div>
