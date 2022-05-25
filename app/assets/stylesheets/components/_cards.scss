@@ -94,6 +94,11 @@
   color: rgb(116, 115, 115);
 }
 
+.card-show {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+}
+
 .card {
   position: relative;
   width: 350px;

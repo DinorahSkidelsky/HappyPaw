@@ -53,9 +53,8 @@ body {
 .fondobanner2 {
   background-size: cover;
   background-position: center;
-  padding: 140px 0;
+  padding: 200px 0;
   background-image: url("fondobanner2.png");
-  margin-bottom: 50px;
   align-items: center;
   text-align: center;
 }
@@ -77,3 +76,13 @@ body {
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.fondoshow {
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("bannershow.jpeg");
+  background-size: cover;
+  background-position: center;
+  }
+
+  .banner-review{
+    
+  }

@@ -1,10 +1,26 @@
 <div class="container">
-  <%= simple_form_for [ @profile, @reservation ] do |f| %>
-    <%= f.input :start_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
-    <%= f.input :end_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
-    <%= f.input :observation %>
-    <%= f.input :phone_number %>
-    <%= f.button :submit, "Go", class: "btn btn-warning mx-3" %>
-      <%= link_to 'Back', profile_path(@profile), class: "btn btn-dark" %>
-  <% end %>
+  <div class="d-flex justify-content-center my-5">
+    <h1><strong>Make your Reservation</strong></h1>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <%= image_tag("reservation.jpeg", width: 650, height: 450) %>
+      </div>
+      <div class="col-6 border">
+        <div class="my-3 mx-3">
+          <%= simple_form_for [ @profile, @reservation ] do |f| %>
+          <%= f.input :start_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
+          <%= f.input :end_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
+          <%= f.input :observation %>
+          <%= f.input :phone_number %>
+          <%= f.button :submit, "Go", class: "btn btn-warning mx-3" %>
+          <%= link_to 'Back', profile_path(@profile), class: "btn btn-dark" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
