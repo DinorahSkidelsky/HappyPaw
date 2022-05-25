@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-center my-4 form-actions">
   <%- if controller_name != 'sessions' %>
-   Already a member?<%= link_to "Log in", new_session_path(resource_name), class: "text-success" %><br />
+   Already a member?&nbsp;<%= link_to "Log in", new_session_path(resource_name), class: "text-success" %><br />
   <% end %>
 </div>
 
 <div class="d-flex justify-content-center my-4 form-actions">
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    Haven't used HappyPaw before?<br /><%= link_to "Sign up", new_registration_path(resource_name), class: "text-success" %>
+    Haven't used HappyPaw before?&nbsp;<br /><%= link_to "Sign up", new_registration_path(resource_name), class: "text-success" %>
   <% end %>
 </div>
 
