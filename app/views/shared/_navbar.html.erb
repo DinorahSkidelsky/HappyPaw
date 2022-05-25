@@ -17,25 +17,24 @@
         <% if user_signed_in? %>
           <li class="nav-item">
             <% if current_user.profile == nil %>
-              <%= link_to 'Become a Sitter', new_profile_path, class: "nav-link btn btn-flat me-3" %>
+              <%= link_to 'Become a Sitter', new_profile_path, class: "btn btn-navbar" %>
+              <%= link_to 'Chats', chatrooms_path, class: "btn btn-navbar" %>
             <% else %>
-              <%= link_to 'Chats', chatrooms_path, class: "btn btn-flat me-3" %>
-              <%= link_to 'Reservations', reservations_path, class: "btn btn-flat me-3" %>
+              <%= link_to 'Chats', chatrooms_path, class: "btn btn-navbar" %>
+              <%= link_to 'Reservations', reservations_path, class: "btn btn-navbar" %>
             <% end %>
           </li>
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo.key, style: "cursor: pointer; width: 32px; height: 32px;", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key, style: "cursor: pointer; width: 39px; height: 39px;", class: "avatar dropdown-toggle me-3 ms-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile != nil %>
-                <div class="dropdown-item"><%= "#{current_user.first_name}" %></div>
+                 <div class="dropdown-item"><strong><%= "#{current_user.first_name}" %></strong></div>
                 <%= link_to "Profile", profile_path(current_user.profile), class: "dropdown-item" %>
+              <% else %>
+                <div class="dropdown-item"><strong><%= "#{current_user.first_name}" %></strong></div>
               <% end %>
-
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-             </div>
           </li>
         <% else %>
           <li class="nav-item">

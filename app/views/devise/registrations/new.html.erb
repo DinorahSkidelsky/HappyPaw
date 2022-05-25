@@ -1,31 +1,35 @@
-<div class="col border">
-  <div class="d-flex justify-content-center mt-4 mb-3">
-    <h2>Sign up to join HappyPaw</h2>
-  </div>
-  <div class="contianer m-4 p-4">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :photo, as: :file %>
-      </div>
-    <div class="d-flex justify-content-center my-4 form-actions form-actions">
-      <%= f.button :submit, "Sign up", class:"btn btn-outline-dark" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-md-6 col-lg-6">
+    <div class="text-center">
+      <h2>Sign up to join HappyPaw</h2>
     </div>
-  <% end %>
+    <div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-<%= render "devise/shared/links" %>
+        <div class="form-inputs">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo, as: :file %>
+        </div>
+      <div class="d-flex justify-content-center my-4 form-actions form-actions">
+        <%= f.button :submit, "Sign up", class:"btn btn-flat text-black" %>
+      </div>
+    <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+    </div>
   </div>
+</div>

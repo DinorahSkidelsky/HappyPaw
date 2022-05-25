@@ -1,25 +1,27 @@
-<div style="min-height: 83vh;">
-  <div class="col border">
-      <div class="d-flex justify-content-center mt-4 mb-3">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-md-6 col-lg-6">
+      <div class="text-center">
         <h2>Welcome Back!</h2>
       </div>
-  <div class="container m-4 p-4">
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
+      <div>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
+          <%= f.input :password,
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+        <div class="d-flex justify-content-center my-4 form-actions">
+          <%= f.button :submit, "Log in", class:"btn btn-flat text-black" %>
+        </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
       </div>
-      <div class="d-flex justify-content-center my-4 form-actions">
-        <%= f.button :submit, "Log in", class:"btn btn-outline-dark" %>
-      </div>
-      <% end %>
-
-  <%= render "devise/shared/links" %>
+    </div>
+  </div>
 </div>
-

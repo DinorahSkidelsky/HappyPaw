@@ -1,30 +1,31 @@
 .btn-flat {
   text-align: center;
-  padding: 6px;
-  font-size: 22px;
+  padding: 12px;
+  font-size: 20px;
   border-width: 3px;
   border-radius: 12px;
   border-style: solid;
   border-color: #B7E3EC;
-  background-color: transparent;
+  background-color: #B7E3EC;
   color: rgb(0, 0, 0);
-  font-family: 'Orelega One', cursive;
+  font-family: 'Montserrat', cursive;
 }
 
 #query::placeholder {
-  font-family: 'Orelega One', cursive;
+  font-family: 'Montserrat', cursive;
   color: black;
 }
 
 .btn-flat:hover {
-  background: #B7E3EC;
-  color: #5D679C;
+
+  background: white;
+  color: black;
 }
 
 .button-input {
     text-align: center;
-    padding: 6px;
-    font-size: 22px;
+    padding: 12px;
+    font-size: 20px;
     border-width: 3px;
     border-radius: 12px;
     border-style: solid;
@@ -39,11 +40,79 @@
   box-shadow: none;
 }
 
-
-
 .content-search {
   text-align: start;
 }
+
 .profiles{
   padding-top: 20px;
+}
+
+.btn-navbar {
+  text-align: center;
+  padding: 6px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 2px solid #B7E3EC;
+  border-color: #B7E3EC;
+  background-color:  white;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', cursive;
+  margin-right: 5px;
+}
+
+#query::placeholder {
+  font-family: 'Montserrat', cursive;
+  color: black;
+}
+
+.btn-navbar:hover {
+  background: #B7E3EC;
+  color: black;
+}
+
+.btn-all {
+  text-align: center;
+  padding: 12px;
+  font-size: 20px;
+  border-width: 3px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #B7E3EC;
+  background-color: #B7E3EC;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', cursive;
+  font-weight: bold;
+}
+
+#query::placeholder {
+  font-family: 'Montserrat', cursive;
+  color: black;
+}
+
+.btn-all:hover {
+  background: white;
+  color: black;
+}
+
+.btn-see {
+  text-align: center;
+  padding: 6px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #B7E3EC;
+  border-color: #B7E3EC;
+  background-color:  #B7E3EC;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', cursive;
+}
+
+#query::placeholder {
+  font-family: 'Montserrat', cursive;
+  color: black;
+}
+
+.btn-see:hover {
+  background: white;
+  color: black;
 }
