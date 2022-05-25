@@ -14,8 +14,10 @@
           <%= f.input :price %>
           <%= f.input :phone_number %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.button :button, {class: "btn btn-success mt-2"} do %>
+          <div class="d-flex justify-content-center">
+            <%= f.button :button, {class: "btn btn-flat mt-2"} do %>
             <i class="fas fa-paw"></i><strong> Create </strong>
+          </div>
           <% end %>
         <% end %>
       </div>
