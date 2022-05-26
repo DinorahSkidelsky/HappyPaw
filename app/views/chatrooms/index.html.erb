@@ -12,12 +12,7 @@
                 <h3 class="card__title-chat">
                   <%= link_to "#{chatroom.profile.user.first_name} #{chatroom.profile.user.last_name} " '<i class= "far fa-comment text-black"></i>'.html_safe, chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-all" %>
                 </h3>
-                <h3>
-                  <%= link_to '<i class= "fas fa-trash text-black"></i>'.html_safe,
-                      chatroom_path(chatroom),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-                </h3>
+             
               </div>
             </div>
           <% else chatroom.profile.user.id  == current_user.id %>
