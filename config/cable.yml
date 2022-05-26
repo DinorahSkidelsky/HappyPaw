@@ -8,4 +8,3 @@ production:
   adapter: redis
   url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: HappyPaw_production
-
