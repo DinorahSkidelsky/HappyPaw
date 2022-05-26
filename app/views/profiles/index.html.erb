@@ -9,15 +9,19 @@
            <div class="card-profile-info">
             <i class="fas fa-share-alt share fs-5"></i>
             <i class="far fa-heart like fs-5"></i>
-              <div>
-                <h3><%= profile.user.first_name %></h3>
+              <div class="ms-3">
+                <h3><strong><%= profile.user.first_name %></strong></h3>
                 <h4><%=h truncate(profile.description, length: 40) %></h4>
               </div>
             </div>
             <% if profile.user_id != current_user.id %>
-              <%= link_to 'See more', profile_path(profile), class: "btn btn-see" %>
+              <div class="d-flex align-self-end me-2 mb-2">
+                <%= link_to 'See more', profile_path(profile), class: "btn btn-see" %>
+              </div>
             <% else %>
-              <%= link_to 'My profile', profile_path(profile), class: "btn btn-see" %>
+              <div class="d-flex align-self-end me-2 mb-2">
+                <%= link_to 'My profile', profile_path(profile), class: "btn btn-see" %>
+              </div>
             <% end %>
           </div>
           <% end %>
