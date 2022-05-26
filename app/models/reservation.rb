@@ -17,8 +17,10 @@ class Reservation < ApplicationRecord
   end
 
   def start_time_cannot_be_end_time
-    if start_time > end_time
-      errors.add(:end_time, "can't be less than start time")
-    end
+    #if start_time && end_time
+      if start_time > end_time
+        errors.add(:end_time, "can't be less than start time")
+      end
+    #end
   end
 end
