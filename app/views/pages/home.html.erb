@@ -1,10 +1,10 @@
 <div class="banner">
   <div class="container">
-    <h1>HappyPaw</h1>
-    <p>Become a Sitter & Find the Sitter for your Best Friend </p>
+    <h1 class="mb-2">HappyPaw</h1>
+    <p>Find the sitter for your best friend </p>
       <div class="content-search">
         <%= form_tag profiles_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "btn button-input", placeholder: "Location" %>
+        <%= text_field_tag :query, params[:query], class: "btn button-input", placeholder: "Type a location" %>
         <%= submit_tag "Search", class: "btn btn-flat" %>
         <%= link_to 'See all profiles', profiles_path, class: "btn btn-all" %>
         <% end %>
@@ -18,87 +18,86 @@
       </div>
     </div>
     <div class="col-6">
-      <h1 style=" margin-top: 15%; text-align: center;">Connecting Petslovers</h1>
-      <p style=" font-size: 22px; text-align: center;">Desde HappyPaw, queremos conectar a los amantes de nuestros peludos.Nuestra misión principal es facilitar la busqueda de personas que esten dispuestas a cuidar a tu mascota en tu localidad. Para eso, ofrecemos la posibilidad de convertirte en “Petsitter”  en 2 simples pasos. Esto es  por lo que HappyPaw ayuda a las personas que no pueden tener su propia mascota, a compartir un tiempo con ellos.
-      </p>
+      <h1 style="margin-top: 22%; margin-bottom: 2%; text-align: center;"><strong>Connecting Petslovers</strong></h1>
+      <h6 style="font-size: 22px; text-align: center;"><strong>From HappyPaw, we want to connect lovers of our furry ones.</strong> That is why our main mission is to help you find the ideal person to take care of your pet and on the other hand, we give those who love animals the possibility of becoming a "Petsitter" in two simple steps.</h6>
     </div>
   </div>
 </div>
-<div class="container d-flex justify-content-center mb-5 mt-5">
-<h1>Algunos de nuestros sitters</h1>
+<div class="container d-flex justify-content-center my-5">
+<h2 style="margin-top: 4%"><strong>Why are more and more people joining us?</strong></h2>
 </div>
 <%# CAROUSEL %>
- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+ <div style="margin-bottom: 5%" id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-inner" style="width: 75%; margin: 0 auto; margin-bottom: 60px;">
-     <div class="carousel-item active" data-bs-interval="10000">
+     <div class="carousel-item active" data-bs-interval="5000">
       <div class="separar-card">
         <div class="card" style="background-image: url('<%= image_path "perritocard1.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Bilu</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
         <div class="card" style="background-image: url('<%= image_path "perritocard6recorte.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Luck</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
         <div class="card" style="background-image: url('<%= image_path "perritocard4.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Dino</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-item" data-bs-interval="10000">
+    <div class="carousel-item" data-bs-interval="5000">
       <div class="separar-card">
         <div class="card" style="background-image: url('<%= image_path "perritocard2.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Paul</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
         <div class="card" style="background-image: url('<%= image_path "perritocard5.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Andy</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
         <div class="card" style="background-image: url('<%= image_path "gatitocard1.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Nati</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-item" data-bs-interval="10000">
+    <div class="carousel-item" data-bs-interval="5000">
       <div class="separar-card">
         <div class="card" style="background-image: url('<%= image_path "perritocard7.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Luise</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
         <div class="card" style="background-image: url('<%= image_path "perritocard3recorte.jpg" %>');">
           <div class="card__content">
-            <h3 class="card__title">Paula L.</h3>
+            <h3 class="card__title">Lux</h3>
             <span class="card_subtitle">Soy un perrito feliz</span>
             <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
         </div>
         <div class="card" style="background-image: url('<%= image_path "gatitocard1.jpg" %>');">
           <div class="card__content">
-           <h3 class="card__title">Paula L.</h3>
+           <h3 class="card__title">Mati</h3>
            <span class="card_subtitle">Soy un perrito feliz</span>
            <p class="card__description">Its amazing,can you please upload in youtube with explanation how it is done.will be more helpful,Thanks in advance</p>
           </div>
@@ -114,15 +113,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-  <%# <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div> %>
 </div>
 <div class="fondobanner2 mt-5">
-  <h1>Necesitas un cuidador para el finde de semana ?</h1>
-  <p>Mira nuestros cuidadores disponibles en tu barrio ...</p>
-  <%= link_to 'See all profiles', profiles_path, class: "btn btn-flat", style: "width:200px; height:50px; background-color: #5D679C;"%>
+  <h1>Do you need a sitter soon?</h1>
+  <p class="mt-2">See all our available sitters</p>
+  <%= link_to 'See more', profiles_path, class: "btn btn-all"%>
 </div>
-<%# ==================== %>

@@ -1,7 +1,7 @@
 .btn-flat {
   text-align: center;
   padding: 12px;
-  font-size: 20px;
+  font-size: 18px;
   border-width: 3px;
   border-radius: 12px;
   border-style: solid;
@@ -17,15 +17,15 @@
 }
 
 .btn-flat:hover {
-
   background: white;
   color: black;
+  box-shadow: none;
 }
 
 .button-input {
     text-align: center;
     padding: 12px;
-    font-size: 20px;
+    font-size: 18px;
     border-width: 3px;
     border-radius: 12px;
     border-style: solid;
@@ -51,7 +51,7 @@
 .btn-navbar {
   text-align: center;
   padding: 6px;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 12px;
   border: 2px solid #B7E3EC;
   border-color: #B7E3EC;
@@ -69,17 +69,18 @@
 .btn-navbar:hover {
   background: #B7E3EC;
   color: black;
+  box-shadow: none;
 }
 
 .btn-all {
   text-align: center;
   padding: 12px;
-  font-size: 20px;
+  font-size: 18px;
   border-width: 3px;
   border-radius: 12px;
   border-style: solid;
-  border-color: #B7E3EC;
-  background-color: #B7E3EC;
+  border-color: #ECC11B;
+  background-color: #ECC11B;
   color: rgb(0, 0, 0);
   font-family: 'Montserrat', cursive;
   font-weight: bold;
@@ -93,6 +94,7 @@
 .btn-all:hover {
   background: white;
   color: black;
+  box-shadow: none;
 }
 
 .btn-see {
@@ -115,4 +117,5 @@
 .btn-see:hover {
   background: white;
   color: black;
+  box-shadow: none
 }

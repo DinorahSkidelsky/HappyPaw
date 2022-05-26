@@ -8,7 +8,7 @@ const chatroomChannel = () => {
     {
       received(data) {
         const userId = document.querySelector(".messages_list").dataser.userId
-        console.log("hola")
+        console.log("hi")
       }
   })
 }

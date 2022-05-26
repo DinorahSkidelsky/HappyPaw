@@ -17,21 +17,23 @@
         <% if user_signed_in? %>
           <li class="nav-item">
             <% if current_user.profile == nil %>
+              <%= link_to '<i class= "fas fa-search"></i>'.html_safe, profiles_path, class: "btn btn-navbar" %>
+              <%= link_to '<i class="far fa-comments"></i>'.html_safe, chatrooms_path, class: "btn btn-navbar" %>
               <%= link_to 'Become a Sitter', new_profile_path, class: "btn btn-navbar" %>
-              <%= link_to 'Chats', chatrooms_path, class: "btn btn-navbar" %>
             <% else %>
-              <%= link_to 'Chats', chatrooms_path, class: "btn btn-navbar" %>
-              <%= link_to 'Reservations', reservations_path, class: "btn btn-navbar" %>
+              <%= link_to '<i class= "fas fa-search"></i>'.html_safe, profiles_path, class: "btn btn-navbar" %>
+              <%= link_to '<i class="far fa-comments"></i>'.html_safe, chatrooms_path, class: "btn btn-navbar" %>
+              <%= link_to 'Bookings', reservations_path, class: "btn btn-navbar" %>
             <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, style: "cursor: pointer; width: 39px; height: 39px;", class: "avatar dropdown-toggle me-3 ms-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile != nil %>
-                 <div class="dropdown-item"><strong><%= "#{current_user.first_name}" %></strong></div>
-                <%= link_to "Profile", profile_path(current_user.profile), class: "dropdown-item" %>
+                 <div class="dropdown-item"><i class="fas fa-user"></i><strong><%= " #{current_user.first_name}" %></strong></div>
+                <%= link_to "My profile", profile_path(current_user.profile), class: "dropdown-item" %>
               <% else %>
-                <div class="dropdown-item"><strong><%= "#{current_user.first_name}" %></strong></div>
+                <div class="dropdown-item"><i class="fas fa-user"></i><strong><%= " #{current_user.first_name}" %></strong></div>
               <% end %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>

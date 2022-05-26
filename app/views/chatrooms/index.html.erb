@@ -1,40 +1,42 @@
-<div class="container">
-  <div class="d-flex justify-content-center my-5">
-    <h1>Chats</h1>
-  </div>
-  <div class="cards flex-container">
-    <% @chatrooms.each do |chatroom| %>
-      <% if current_user.id == chatroom.profile.user.id || chatroom.user_id == current_user.id %>
-        <% if chatroom.user.id == current_user.id %>
-          <div class="card-chat" style="background-image: url('<%= cl_image_path chatroom.profile.user.photo.key, style: "width: 50px; height: 50px;",class: "profile-photo mt-0", crop: :fill %>');">
-            <div class="card__content-chat">
-              <h3 class="card__title-chat">
-                <%= link_to "Chat " " #{chatroom.profile.user.first_name} #{chatroom.profile.user.last_name}", chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-success" %>
-              </h3>
-              <h3>
-                <%= link_to '<i class= "fas fa-trash text-success"></i>'.html_safe,
-                    chatroom_path(chatroom),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-              </h3>
+<div class="back">
+  <div class="container">
+    <div class="d-flex justify-content-center my-5">
+      <h1>My Chats</h1>
+    </div>
+    <div class="cards flex-container">
+      <% @chatrooms.each do |chatroom| %>
+        <% if current_user.id == chatroom.profile.user.id || chatroom.user_id == current_user.id %>
+          <% if chatroom.user.id == current_user.id %>
+            <div class="card-chat" style="background-image: url('<%= cl_image_path chatroom.profile.user.photo.key, style: "width: 50px; height: 50px;",class: "profile-photo mt-0", crop: :fill %>');">
+              <div class="card__content-chat">
+                <h3 class="card__title-chat">
+                  <%= link_to "#{chatroom.profile.user.first_name} #{chatroom.profile.user.last_name} " '<i class= "far fa-comment text-black"></i>'.html_safe, chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-all" %>
+                </h3>
+                <h3>
+                  <%= link_to '<i class= "fas fa-trash text-black"></i>'.html_safe,
+                      chatroom_path(chatroom),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+                </h3>
+              </div>
             </div>
-          </div>
-        <% else chatroom.profile.user.id  == current_user.id %>
-          <div class="card-chat" style="background-image: url('<%= cl_image_path chatroom.user.photo.key, style: "width: 50px; height: 50px;",class: "profile-photo mt-0", crop: :fill %>');">
-            <div class="card__content-chat">
-              <h3 class="card__title-chat">
-                <%= link_to "Chat " " #{chatroom.user.first_name} #{chatroom.user.last_name}", chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-success" %>
-              </h3>
-              <h3>
-                <%= link_to '<i class= "fas fa-trash text-success"></i>'.html_safe,
-                    chatroom_path(chatroom),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-              </h3>
+          <% else chatroom.profile.user.id  == current_user.id %>
+            <div class="card-chat" style="background-image: url('<%= cl_image_path chatroom.user.photo.key, style: "width: 50px; height: 50px;",class: "profile-photo mt-0", crop: :fill %>');">
+              <div class="card__content-chat">
+                <h3 class="card__title-chat">
+                  <%= link_to "#{chatroom.user.first_name} #{chatroom.user.last_name} " '<i class= "far fa-comment text-black"></i>'.html_safe, chatroom_path(chatroom), class: "text-dark text-decoration-none btn btn-all" %>
+                </h3>
+                <h3>
+                  <%= link_to '<i class= "fas fa-trash text-black"></i>'.html_safe,
+                      chatroom_path(chatroom),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+                </h3>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
