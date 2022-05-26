@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <% if user_signed_in? %>
        <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "happypaw.jpg", class: "circleavatar" %> HappyPaw
+        <%= image_tag "happypaw.jpg", class: "circleavatar" %><strong>HappyPaw</strong>
       <% end %>
     <% else %>
       <%= link_to root_path, class: "navbar-brand" do %>
