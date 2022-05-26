@@ -34,11 +34,12 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .img-conect{
-  margin-top: 20px;
+  margin-left: 70px;
+  margin-top: 45px;
   background-size: cover;
-  height: 600px;
+  height: 400px;
   width: auto;
-  background-image: url("connecting.jpeg");
+  background-image: url("connecting1.jpeg");
 }
 
 body {
@@ -53,7 +54,7 @@ body {
 .fondobanner2 {
   background-size: cover;
   background-position: center;
-  padding: 200px 0;
+  padding: 145px 0;
   background-image: url("fondobanner2.png");
   align-items: center;
   text-align: center;
@@ -68,7 +69,6 @@ body {
   text-align: center;
 }
 
-
 .fondobanner2 p {
   text-align: center;
   font-size: 20px;
@@ -78,7 +78,7 @@ body {
 }
 
 .fondoshow {
-  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("bannershow.jpeg");
-  background-size: cover;
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("bannershow.jpeg");
   background-position: center;
+  background-size: 75%;
   }

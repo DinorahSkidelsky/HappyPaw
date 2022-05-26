@@ -17,9 +17,11 @@
             <%= cl_image_tag photo.key, height: 100, width: 250, crop: :fill %>
           <% end %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.button :button, {class: "btn btn-success mt-2"} do %>
-              <i class="fas fa-paw"></i><strong> Update </strong>
-            <% end %>
+          <div class="d-flex justify-content-center">
+          <%= f.button :button, {class: "btn btn-flat mt-2 mb-3"} do %>
+            <i class="fas fa-paw"></i><strong> Save </strong>
+          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

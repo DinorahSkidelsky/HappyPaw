@@ -17,5 +17,3 @@ import "bootstrap"
 
 import { initflatpickr } from "../plugins/init_flatpickr";
 initflatpickr();
-
-//= require sweet-alert

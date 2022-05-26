@@ -12,21 +12,21 @@
             </div>
               <div class="mb-4 d-flex justify-content-evenly mt-5">
                 <% if @profile.user_id != current_user.id %>
-                  <%= link_to 'New Reservation', new_profile_reservation_path(@profile), class: "btn btn-warning moved-button" %>
+                  <%= link_to 'New Reservation', new_profile_reservation_path(@profile), class: "btn btn-see moved-button" %>
                 <% end %>
                 <% if current_user.id != @profile.user_id %>
                   <% if @chat %>
-                    <%= link_to "Continue Chatting", chatroom_path(@chat), class:"btn btn-success" %>
+                    <%= link_to "Continue Chatting", chatroom_path(@chat), class:"btn btn-see" %>
                   <% else %>
-                    <%= link_to "Start Chat", chatrooms_path(user: current_user, profile: @profile), class: "btn btn-success", method: :post %>
+                    <%= link_to "Start Chat", chatrooms_path(user: current_user, profile: @profile), class: "btn btn-see", method: :post %>
                   <% end %>
                 <% end %>
                 <% if current_user.id == @profile.user_id %>
-                    <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-dark moved-button" %>
+                    <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-see moved-button" %>
                     <%= link_to "Delete Profile",
                     profile_path(@profile),
                     method: :delete,
-                    data: { confirm: "Are you sure?" }, class: "btn btn-warning mx-3" %>
+                    data: { confirm: "Are you sure?" }, class: "btn btn-see mx-3" %>
                 <% end %>
             </div>
             <% @profile.photos.each do |photo| %>
