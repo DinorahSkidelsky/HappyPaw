@@ -20,9 +20,9 @@ class ChatroomsController < ApplicationController
     end
   end
 
-  def destroy
-    @chatroom = Chatroom.find(params[:id])
-    @chatroom.destroy
-    redirect_to chatrooms_path
-  end
+  # def destroy
+  #   @chatroom = Chatroom.find(params[:id])
+  #   @chatroom.destroy
+  #   redirect_to chatrooms_path
+  # end
 end
