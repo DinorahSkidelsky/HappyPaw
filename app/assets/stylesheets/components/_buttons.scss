@@ -9,11 +9,13 @@
   background-color: #B7E3EC;
   color: rgb(0, 0, 0);
   font-family: 'Montserrat', cursive;
+  font-weight: bold;
 }
 
 #query::placeholder {
   font-family: 'Montserrat', cursive;
   color: black;
+  font-weight: bold;
 }
 
 .btn-flat:hover {
@@ -32,6 +34,7 @@
     border-color: #B7E3EC;
     background-color: transparent;
     color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 .button-input:focus {
