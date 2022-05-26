@@ -3,7 +3,7 @@
       <%# Columna 1  %>
         <div class="row">
           <div class="img-fluid col col-md-12 col-lg-6 text-center">
-            <%= cl_image_tag @profile.user.photo.key, class:"rounded-circle shadow me-5 mt-5", style:"height:370px; width:370px;", crop: :fill %>
+            <%= cl_image_tag @profile.user.photo.key, class:"rounded-circle shadow me-5 mt-5", style:"height:450px; width:450px;", crop: :fill %>
           </div>
           <div class="col col-md-12 col-lg-6 mt-5">
             <h1 class=""><%= "#{@profile.user.first_name.capitalize}" " #{@profile.user.last_name.capitalize}" %></h1>
@@ -38,32 +38,32 @@
 
       <%# Columna 2  %>
       <div class="row">
-        <div class="col col-md-6 mb-5">
-          <p class="fs-3">📍 <%= @profile.location %></p>
-          <p class="fs-3">💵<%= @profile.price %>/ Night</p>
-          <p class="fs-3">📲<%= @profile.phone_number %></p>
+        <div class="col col-md-6 mb-5 text-left">
+          <p class="fs-4"><i class="fas fa-map-marker-alt mb-2">&nbsp;<%= @profile.location %></i></p>
+          <p class="fs-4"><i class="fas fa-dollar-sign">&nbsp;<%= @profile.price %>/ Night</i></p>
+          <i class="fas fa-mobile fs-4">&nbsp;<%= @profile.phone_number %></i>
         </div>
       </div>
       <%# Fin columna 2 %>
 
       <%# Columna 3  %>
       <div class="row">
-        <div class="col col-md-6 col-lg-6">
-          <div style="width: 600px; height: 600px; margin-bottom: 50px";
+        <div class="col col-md-6 col-lg-6 mb-5">
+          <div style="width: 600px; height:250px; margin-bottom: 27px";
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @markers.to_json %>"
             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
-          <div class="col col-md-6 shadow py-4 px-4">
-            <h2><strong>Reviews:</strong>
-            </h2>
-            <br>
+        <div class="col col-md-6 py-4 px-4 mb-5 scroll-block">
+          <h3><strong>Reviews:</strong></h3>
+          <div class="sticky-review">
             <% @profile.reviews.each do |review|  %>
               <p><%= "⭐" * review.rating %></p>
               <h5><%= review.content %></h5>
             <% end %>
           </div>
+        </div>
       </div>
   <%# Fin columna3 %>
   </div>
