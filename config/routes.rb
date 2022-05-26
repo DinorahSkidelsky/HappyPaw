@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [ :create, :index, :show, :destroy ] do
     resources :messages, only: :create
   end
+  get "//404", to: "errors//not found"
 end
