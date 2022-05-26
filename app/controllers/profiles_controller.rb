@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
         lat: profile.latitude,
         lng: profile.longitude,
         info_window: render_to_string(partial: "info_window", locals: { profile: profile }),
-        image_url: helpers.asset_url(cl_image_path(profile.photos.first.key))
+        image_url: helpers.asset_url(cl_image_path(profile.user.photo.key))
       }
     end
   end
