@@ -101,7 +101,7 @@
   position: relative;
   width: 350px;
   height: 350px;
-  color: #a18a96;
+  color: #000000;
   background-size: cover;
   border-radius: 20px;
   overflow: hidden;
@@ -134,7 +134,7 @@
 }
 
 .card__title {
-  color: #6A515E;
+  color: #000000;
   line-height: 15px;
 }
 .card_subtitle {
@@ -146,6 +146,7 @@
   font-size: 14px;
   opacity: 0;
   transition: opacity .5;
+  font-style: italic;
 }
 .card:hover .card__content {
   transform: translateY(0);
@@ -209,7 +210,7 @@
   transition: opacity .25s;
 }
 .card__title-chat {
-  color: #6A515E;
+  color: #6a515e;
   margin-bottom: 15PX;
 }
 .card__description-chat {
