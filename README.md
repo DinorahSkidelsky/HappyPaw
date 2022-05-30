@@ -1,4 +1,4 @@
-[<h1 class="border button">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
+[<h1 class="border bottom">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
 
 Rails app developed with Ruby on Rails, Javascript, CSS, Bootstrap and PostgreSQL.
 
@@ -11,4 +11,4 @@ Rails app developed with Ruby on Rails, Javascript, CSS, Bootstrap and PostgreSQ
 ✔️[Spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ86wfMG6LS424tmh7NlQcuIeq6D0zd3QE3Cci_pPb-3uqm6VpSlb87OJyPC_rm1kDW0rWxpugOvgR4/pubhtml)⌨️
 
 
-Created whit ♥️ by [Dinorah Skidelsky](https://github.com/DinorahSkidelsky)
+<h5 class="border top">Created whit ♥️ by [Dinorah Skidelsky]</h5>(https://github.com/DinorahSkidelsky)
