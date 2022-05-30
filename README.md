@@ -1,4 +1,4 @@
-[HappyPaw 🐾 ](http://www.happypaw.cloud/)
+<h1>[HappyPaw 🐾 ](http://www.happypaw.cloud/)</h1>
 
 Rails app developed with Ruby on Rails, Javascript, CSS, Bootstrap and PostgreSQL.
 
