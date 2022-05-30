@@ -19,6 +19,7 @@
             <% if current_user.profile == nil %>
               <%= link_to '<i class= "fas fa-search"></i>'.html_safe, profiles_path, class: "btn btn-navbar" %>
               <%= link_to '<i class="far fa-comments"></i>'.html_safe, chatrooms_path, class: "btn btn-navbar" %>
+              <%= link_to 'Bookings', reservations_path, class: "btn btn-navbar" %>
               <%= link_to 'Become a Sitter', new_profile_path, class: "btn btn-navbar" %>
             <% else %>
               <%= link_to '<i class= "fas fa-search"></i>'.html_safe, profiles_path, class: "btn btn-navbar" %>
