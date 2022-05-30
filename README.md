@@ -1,6 +1,6 @@
 [<h1 class="border bottom">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
 
-Rails app developed with Ruby on Rails, Javascript, CSS, Bootstrap and PostgreSQL.
+Rails app developed with Ruby on Rails, JavaScript, CSS, Bootstrap and PostgreSQL.
 
 ✔️[Database Schema](https://kitt.lewagon.com/db/61777) 🔑
 
