@@ -1,3 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-
 [HappyPaw 🐾 ](http://www.happypaw.cloud/)
+
+Rails app developed with Ruby on Rails, Javascript, CSS and Bootstrap
