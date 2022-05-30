@@ -4,6 +4,8 @@ Rails app developed with Ruby on Rails, JavaScript, CSS, Bootstrap and PostgreSQ
 
 ✔️[Database Schema](https://kitt.lewagon.com/db/61777) 🔑
 
+![Uploading Screen Shot 2022-05-30 at 20.46.30.png…]()
+
 ✔[Project Dashboard - Trello](https://trello.com/b/QTJWDdsP/happypaw) 🖋
 
 ✔️[Prototype - Figma](https://www.figma.com/file/08VIrDdqapkoPj2z9jafEQ/HappyPaw?node-id=4%3A2) 🎨
