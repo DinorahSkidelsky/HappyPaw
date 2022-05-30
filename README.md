@@ -1,4 +1,4 @@
-[<h1 class="border bottom text-danger">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
+[<h1 class="border bottom">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
 
 Rails app developed with Ruby on Rails, Javascript, CSS, Bootstrap and PostgreSQL.
 
