@@ -4,11 +4,11 @@ Rails app developed with Ruby on Rails, Javascript, CSS, Bootstrap and PostgreSQ
 
 ✔️[Database Schema](https://kitt.lewagon.com/db/61777) 🔑
 
-✔[Project Dashboard - Trello](https://trello.com/b/QTJWDdsP/happypaw) 🖋
+✔[Project Dashboard - Trello](https://trello.com/b/QTJWDdsP/happypaw)
 
-✔️[Prototype - Figma](https://www.figma.com/file/08VIrDdqapkoPj2z9jafEQ/HappyPaw?node-id=4%3A2) 🎨
+✔️[Prototype - Figma](https://www.figma.com/file/08VIrDdqapkoPj2z9jafEQ/HappyPaw?node-id=4%3A2)
 
-✔️[Spreadsheet](https://docs.google.com/spreadsheets/d/10IGP9XvvcfLz8HKd78lknEAF-v5Djg4LheecPNBQD_U/edit#gid=0) ⌨️
+✔️[Spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ86wfMG6LS424tmh7NlQcuIeq6D0zd3QE3Cci_pPb-3uqm6VpSlb87OJyPC_rm1kDW0rWxpugOvgR4/pubhtml)⌨️
 
 
 Created whit ♥️ by [Dinorah Skidelsky](https://github.com/DinorahSkidelsky)
