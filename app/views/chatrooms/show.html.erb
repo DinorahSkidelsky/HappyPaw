@@ -2,10 +2,10 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
 
   <% if @chatroom.user.id == current_user.id %>
-    <h3 class="text-center"><strong><%= "#{@chatroom.profile.user.first_name}  " %></strong><i class="far fa-comments"></i></h3>
+    <h3 class="text-center"><strong><%= link_to "#{@chatroom.profile.user.first_name}  ", profile_path(@chatroom.profile), class: "text-black" %></strong><i class="far fa-comments"></i></h3>
       <p class="text-center"><%= "#{@chatroom.profile.user.email} " %></p>
   <% else @chatroom.profile.user.id  == current_user.id %>
-    <h3 class="text-center"><strong><%= "#{@chatroom.user.first_name} " %></strong><i class="fas fa-comment"></i></h3>
+    <h3 class="text-center"><strong><%= "#{@chatroom.user.first_name} " %></strong><i class="far fa-comment"></i></h3>
       <p class="text-center"><%= "#{@chatroom.user.email}" %></p>
   <% end %>
 

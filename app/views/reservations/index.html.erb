@@ -12,7 +12,7 @@
         <th scope="col" class="text-center">End Day</th>
         <th scope="col" class="text-center">Price</th>
         <th scope="col" class="text-center">Confirmation</th>
-        <th scope="col" class="text-center">Actions</th>
+        <th scope="col" class="text-center">Review</th>
       </tr>
     </thead>
     <tbody>
@@ -48,11 +48,11 @@
                   <i class="fas fa-check-circle"></i>
                 <% else %>
                   Pending
+                  <%= link_to '<i class= "fa fa-edit text-primary"></i>'.html_safe, edit_reservation_path(reservation) %>
+                  <a data-confirm="You sure?" title="Delete <%= reservation.id %>" rel="nofollow" data-method="DELETE" href="/reservations/<%= reservation.id %>"><i class="fa fa-trash text-danger"></i></a>
                 <% end %>
               </td>
               <td class="text-center">
-                <%= link_to '<i class= "fa fa-edit text-primary"></i>'.html_safe, edit_reservation_path(reservation) %>
-                <a data-confirm="You sure?" title="Delete <%= reservation.id %>" rel="nofollow" data-method="DELETE" href="/reservations/<%= reservation.id %>"><i class="fa fa-trash text-danger"></i></a>
                 <%= link_to '<i class= "fas fa-file-alt text-success"></i>'.html_safe, new_reservation_review_path(reservation) %>
               </td>
             <% end %>
