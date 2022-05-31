@@ -2,7 +2,8 @@
 
 Rails app developed with Ruby on Rails, JavaScript, CSS, Bootstrap and PostgreSQL.
 
-✔️[Database Schema](https://kitt.lewagon.com/db/61777) 🔑
+<ul>
+  <li> [Database Schema](https://kitt.lewagon.com/db/61777) 🔑</li>
 
 ![Uploading Screen Shot 2022-05-30 at 20.46.30.png…]
 
