@@ -1,6 +1,6 @@
 [<h1 class="border bottom">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
 
-Web application built with Ruby on Rails, JavaScript, HTML, CSS, Bootstrap and PostgreSQL. It seeks to connect people who need to leave their pet in someone's care and, in turn, those people who want to become sitters.
+Web page developed with Ruby on Rails, Javascript ES6, HTML5, CSS3, Bootstrap and PostgreSQL. It seeks to connect people who need to leave their pet in someone's care and, in turn, those people who want to become sitters.
 
 ✔️ [Database Schema](https://docs.google.com/spreadsheets/d/1xl5ndTtbFU6LIFGEHSY6ZwGhfc4uXkMJIyqoZkK1OrY/edit?usp=sharing) 🔑
 
