@@ -9,8 +9,8 @@
       </div>
       <div class="d-flex justify-content-center mt-3 pt-3">
         <%= simple_form_for [ @profile, @reservation ] do |f| %>
-        <%= f.input :start_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
-        <%= f.input :end_time, as: :datetime, html5: true, input_html: {class: "datepicker"} %>
+        <%= f.input :start_time, as: :date, html5: true, input_html: {class: "datepicker"} %>
+        <%= f.input :end_time, as: :date, html5: true, input_html: {class: "datepicker"} %>
         <%= f.input :observation %>
         <%= f.input :phone_number %>
         <div class="d-flex justify-content-center">

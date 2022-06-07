@@ -1,14 +1,14 @@
 <div class="fondoshow-edit">
   <div class="container">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-5">
       <h1><strong>Edit Booking</strong></h1>
     </div>
       <div class="container">
         <div class="row">
           <div class="col d-flex justify-content-center mt-3 pt-3">
             <%= simple_form_for [ @profile, @reservation ] do |f| %>
-            <%= f.input :start_time, as: :datetime, html5: true, required: false, input_html: {class: "datepicker"} %>
-            <%= f.input :end_time, as: :datetime, html5: true, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :start_time, as: :date, html5: true, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_time, as: :date, html5: true, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :observation %>
             <%= f.input :phone_number %>
             <div class="d-flex justify-content-center mb-5">
