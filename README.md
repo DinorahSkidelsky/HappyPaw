@@ -1,4 +1,4 @@
-[<h1 class="border bottom">HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
+[<h1 class="border bottom">📌 HappyPaw 🐾 </h1>](http://www.happypaw.cloud/)
 
 Web app developed with Ruby on Rails, Javascript ES6, HTML5, SCSS, Bootstrap and PostgreSQL. 
 It seeks to connect people who need to leave their pet in someone's care and, in turn, those people who want to become sitters.
