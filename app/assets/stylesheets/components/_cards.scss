@@ -78,6 +78,7 @@
 .card-profile .card-profile-info {
   display: flex;
 }
+
 .card-profile-info .share {
   position: absolute;
   right: 15px;
@@ -137,17 +138,20 @@
   color: #000000;
   line-height: 15px;
 }
+
 .card_subtitle {
   display: block;
   font-size: 12px;
   margin-bottom: 10px;
 }
+
 .card__description {
   font-size: 14px;
   opacity: 0;
   transition: opacity .5;
   font-style: italic;
 }
+
 .card:hover .card__content {
   transform: translateY(0);
 }
@@ -194,33 +198,40 @@
   transition: transform .5s.25s ease-in;
   z-index: -1;
 }
+
 .card-chat::before {
   top: 0;
   clip-path:
       polygon(0 0, 100% 0, 100% 45%, 0% 100%);
   transform: translateY(-100%);
 }
+
 .card-chat::after {
   bottom: 0;
   clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
   transform: translateY(100%);
 }
+
 .card__content-chat {
   opacity: 0;
   transition: opacity .25s;
 }
+
 .card__title-chat {
   color: #6a515e;
   margin-bottom: 15PX;
 }
+
 .card__description-chat {
   font-size: 14px;
 }
+
 .card-chat:hover::before,
 .card-chat:hover::after {
   transform: translateY(0);
   background-color: white;
 }
+
 .card-chat:hover .card__content-chat {
   opacity: 1;
   transition-delay: .75s;
